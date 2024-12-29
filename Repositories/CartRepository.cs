@@ -112,6 +112,9 @@ namespace BookShop.Repositories
             }
             var shoppingCart = await _db.ShoppingCarts
                                     .Include(a => a.CartDetails)
+                                    .ThenInclude(a=>a.Book)
+                                    .ThenInclude(a=>a.Stock)
+                                    .Include(a => a.CartDetails)
                                     .ThenInclude(a => a.Book)
                                     .ThenInclude(a => a.Genre)
                                     .Where(a => a.UserId == userId).FirstOrDefaultAsync();
@@ -180,6 +183,17 @@ namespace BookShop.Repositories
                         UnitPrice = item.UnitPrice
                     };        
                     _db.OrderDetails.Add(orderDetail);
+
+                    var stock = await _db.Stocks.FirstOrDefaultAsync(a=>a.BookId == item.BookId);
+                    if (stock == null) 
+                    {
+                        throw new InvalidOperationException("Stock is empty");
+                    }
+                    if(item.Quantity > stock.Quantity)
+                    {
+                        throw new InvalidOperationException($"Only {stock.Quantity} items are availabe");
+                    }
+                    stock.Quantity -= item.Quantity;
                 }
                 _db.SaveChanges();
 

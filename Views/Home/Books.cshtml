@@ -53,7 +53,16 @@
            <b>Genre: </b> @book.GenreName</p>
         <p><b>Author: </b>@book.Author</p>
         <p><b>Prize: </b>@book.Price</p>
-        <button type="button" onclick="add(@book.Id)" class="btn btn-primary">Add to cart</button>
+        
+        @if (book.Quantity > 0) 
+        {
+            <button type="button" onclick="add(@book.Id)" class="btn btn-primary">Add to cart</button>
+        }
+        else
+        {
+            <span style="border: 1px solid; padding: 5px 8px; color: red; border-radius: 5px;">Out of stock</span>
+        }
+
     </div>
     </div>
     }

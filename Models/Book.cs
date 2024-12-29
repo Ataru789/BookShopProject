@@ -17,7 +17,6 @@ namespace BookShop.Models
         [Required]
         public string? Author { get; set; }
         
-        public int Quantity { get; set; }
         public float Price { get; set; }
 
         [Required]
@@ -29,8 +28,12 @@ namespace BookShop.Models
 
         public List<CartDetail> CartDetail { get; set; }
 
+        public Stock Stock { get; set; }
+
         [NotMapped]
         public string GenreName { get; set; }
-        
+
+        [NotMapped]
+        public int Quantity { get; set; }
     }
 }
