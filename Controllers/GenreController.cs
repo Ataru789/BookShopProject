@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Controllers
 {
+    /// <summary>
+    /// Kontroler obsługujący widoki dotyczące gatunków książek
+    /// </summary>
     [Authorize(Roles = nameof(Roles.Admin))]
     public class GenreController : Controller
     {

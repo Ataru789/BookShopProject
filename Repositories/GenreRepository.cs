@@ -3,6 +3,9 @@ using Microsoft.Identity.Client;
 
 namespace BookShop.Repositories
 {
+    /// <summary>
+    /// Odopwiada za komunikację z bazą danych dla gatunków książek, umożliwia dodawanie, usuwanie i edycję gatunków
+    /// </summary>
     public interface IGenreRepository
     {
         Task AddGenre(Genre genre);
