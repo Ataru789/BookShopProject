@@ -1,9 +1,13 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace BookShop.Controllers
 {
     [Authorize]
+    /// <summary>
+    /// Kontroler obsługujący zamówienia użytkownika
+    /// </summary>
     public class UserOrderController : Controller
     {
         private readonly IUserOrderRepository _userOrderRepo;

@@ -4,7 +4,12 @@ using BookShop.Models.DTOs;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Controllers
+
+
 {
+    /// <summary>
+    /// Kontroler obslugujacy widoki strony glownej
+    /// </summary>
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
@@ -31,7 +36,7 @@ namespace BookShop.Controllers
             
             IEnumerable<Book> books = await _homeRepository.GetBooks(sterm, genreId);
             IEnumerable<Genre> genres = await _homeRepository.Genres();
-            BookDisplayModel bookModel = new BookDisplayModel
+            BookDisplayModelDTO bookModel = new BookDisplayModelDTO
             {
                 Books = books,
                 Genres = genres,

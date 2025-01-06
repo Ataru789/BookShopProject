@@ -1,6 +1,9 @@
 ﻿namespace BookShop.Models.DTOs
 {
-    public class BookDisplayModel
+    /// <summary>
+    /// Przechowuje i przekazuje dalej dane do wyświetlenia książek
+    /// </summary>
+    public class BookDisplayModelDTO
     {
         public IEnumerable<Book> Books { get; set; }
 

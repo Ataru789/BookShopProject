@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace BookShop.Controllers;
+/// <summary>
+/// Kontroler odpowiedzialny za zarządzanie zamówieniami przez administratora
+/// </summary>
 
 [Authorize(Roles = nameof(Roles.Admin))]
 public class AdminController : Controller

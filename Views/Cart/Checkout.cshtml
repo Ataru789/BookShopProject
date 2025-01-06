@@ -1,4 +1,4 @@
-﻿@model CheckoutModel
+﻿@model CheckoutModelDTO
 @{
     ViewData["Title"] = "Checkout";
 }
@@ -35,7 +35,7 @@
         <label asp-for="PaymentMethod" class="form-label">Payment Method*</label>
         <select asp-for="PaymentMethod" class="form-select" id="paymentMethod" required>
             <option value="">Select Payment Method</option>
-            @foreach (var method in Enum.GetValues(typeof(BookShop.Constants.PaymentMethods)))
+            @foreach (var method in Enum.GetValues(typeof(BookShop.Constants.PayMethods)))
             {
                 <option value="@method.ToString()">@method.ToString()</option>
             }

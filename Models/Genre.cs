@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations;
 namespace BookShop.Models
 {
     [Table("Genre")]
+    /// <summary>   
+    /// Model przechowujący informacje o gatunkach książek
+    /// </summary>
     public class Genre
     {
             public int Id { get; set; }

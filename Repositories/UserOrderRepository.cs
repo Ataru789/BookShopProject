@@ -2,8 +2,13 @@
 using Microsoft.EntityFrameworkCore;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
+
+
 namespace BookShop.Repositories
 {
+    /// <summary>
+    /// Odpowiada za komunikację z bazą danych dla zamówień użytkownika, umożliwia pobieranie i wyświetlanie zamówień
+    /// </summary>
     public class UserOrderRepository : IUserOrderRepository
     {
         private readonly ApplicationDbContext _db;

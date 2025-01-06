@@ -2,8 +2,12 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Identity.Client;
 
+
 namespace BookShop.Repositories
 {
+    /// <summary>
+    /// Odpowiada za komunikację z bazą danych dla koszyka, umożliwia dodawanie i usuwanie książek z koszyka
+    /// </summary>
     public class CartRepository : ICartRepository
     {
         private readonly ApplicationDbContext _db;
@@ -140,7 +144,7 @@ namespace BookShop.Repositories
             return data.Count;
         }
 
-        public async Task<bool> DoCheckout(CheckoutModel model) 
+        public async Task<bool> DoCheckout(CheckoutModelDTO model) 
         {
             using var transaction = _db.Database.BeginTransaction();
             try

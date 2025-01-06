@@ -3,6 +3,10 @@ using BookShop.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 
+/// <summary>
+/// Konfiguracja aplikacji ASP.NET Core. £¹czy siê z baz¹ danych SQL Server
+/// </summary>
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.

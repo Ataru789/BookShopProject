@@ -4,6 +4,9 @@ using Microsoft.AspNetCore.Mvc;
 namespace BookShop.Controllers
 {
     [Authorize]
+    /// <summary>
+    /// Kontroler obsługujący koszyk
+    /// </summary>
     public class CartController : Controller
     {
         private readonly ICartRepository _cartRepo;
@@ -42,7 +45,7 @@ namespace BookShop.Controllers
             return View();    
         }
         [HttpPost]
-        public async Task<IActionResult> Checkout(CheckoutModel model)
+        public async Task<IActionResult> Checkout(CheckoutModelDTO model)
         {
             if(!ModelState.IsValid)
                 return View(model);

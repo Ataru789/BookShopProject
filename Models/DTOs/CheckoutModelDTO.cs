@@ -2,7 +2,10 @@
 
 namespace BookShop.Models.DTOs;
 
-public class CheckoutModel
+/// <summary>
+/// Przechowuje i przekazuje dalej informacje o zamówieniu
+/// </summary>
+public class CheckoutModelDTO
 {
     [Required]
     [MaxLength(100)]

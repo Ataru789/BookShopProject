@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Repositories
 {
+    /// <summary>
+    /// Odpowiada za komunikację z bazą danych dla książek, umożliwia pobieranie i wyświetlanie książek
+    /// </summary>
     public class BookRepository : IBookRepository
     {
         private readonly ApplicationDbContext _db;
