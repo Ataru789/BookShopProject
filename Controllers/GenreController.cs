@@ -66,7 +66,7 @@ namespace BookShop.Controllers
             return View(genreToUpdate);
         }
         [HttpPost]
-        public async Task<IActionResult> EditGenre(GenreDTO genreToUpdate)
+        public async Task<IActionResult> UpdateGenre(GenreDTO genreToUpdate)
         {
             if (!ModelState.IsValid)
             {
