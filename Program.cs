@@ -1,5 +1,6 @@
 using BookShop;
 using BookShop.Data;
+using BookShop.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 /// <summary>
@@ -24,6 +25,9 @@ builder.Services.AddTransient<ICartRepository, CartRepository>();
 builder.Services.AddTransient<IUserOrderRepository, UserOrderRepository>();
 builder.Services.AddTransient<IStockRepository, StockRepository>();
 builder.Services.AddTransient<IGenreRepository, GenreRepository>();
+
+builder.Services.AddHttpClient<ExchangeRateService>();
+
 
 var app = builder.Build();
 //using (var scope = app.Services.CreateScope()) 

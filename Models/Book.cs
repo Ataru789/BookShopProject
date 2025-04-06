@@ -15,11 +15,11 @@ namespace BookShop.Models
         [MaxLength(100)]
         public string? Title { get; set; }
 
-        public string? Image {  get; set; }
+        public string? Image { get; set; }
 
         [Required]
         public string? Author { get; set; }
-        
+
         public float Price { get; set; }
 
         [Required]
@@ -27,7 +27,7 @@ namespace BookShop.Models
 
         public Genre Genre { get; set; }
 
-        public List<OrderDetail> OrderDetail  { get; set; }
+        public List<OrderDetail> OrderDetail { get; set; }
 
         public List<CartDetail> CartDetail { get; set; }
 
@@ -38,5 +38,9 @@ namespace BookShop.Models
 
         [NotMapped]
         public int Quantity { get; set; }
+
+        // Nowe pole na przeliczoną cenę w wybranej walucie
+        [NotMapped]
+        public decimal? PriceInSelectedCurrency { get; set; }
     }
 }

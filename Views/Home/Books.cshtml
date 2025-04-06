@@ -1,4 +1,4 @@
-﻿
+﻿﻿
 @model BookDisplayModelDTO
 @{
     ViewData["Title"] = "Home Page";
@@ -6,70 +6,149 @@
 
 <div my-3>
     <form asp-action="Books" class="row row-cols-lg-auto g-3 align-items-center">
- 
-  <div class="col-12">
-    <label class="visually-hidden" for="genreId">Genres</label>
-    <select class="form-select" id="genreId" name="genreId">
-      <option selected>Select genre</option>
-      @foreach(var genre in Model.Genres)
-      {
-        <option selected="@(genre.Id == Model.GenreId)" value="@genre.Id">@genre.GenreName</option>
-      }
-     
-    </select>
-  </div>
 
-   <div class="col-12">
-    <label class="visually-hidden" for="sterm">Search by title</label>
-    <div class="input-group">
-      <div class="input-group-text"></div>
-      <input type="text" class="form-control" value="@Model.STerm" id="sterm" name="sterm" placeholder="Search by title">
-    </div>
-  </div>
+        <div class="col-12">
+            <label class="visually-hidden" for="genreId">Genres</label>
+            <select class="form-select" id="genreId" name="genreId">
+                <option selected>Select genre</option>
+                @foreach (var genre in Model.Genres)
+                {
+                    <option selected="@(genre.Id == Model.GenreId)" value="@genre.Id">@genre.GenreName</option>
+                }
 
-  <div class="col-12">
-    <button type="submit" class="btn btn-primary">Search</button>
-    <a href="/Home/Books" class="btn btn-dark">Reset</a>
-  </div>
-</form>
+            </select>
+        </div>
+
+        <div class="col-12">
+            <label class="visually-hidden" for="sterm">Search by title</label>
+            <div class="input-group">
+                <div class="input-group-text"></div>
+                <input type="text" class="form-control" value="@Model.STerm" id="sterm" name="sterm" placeholder="Search by title">
+            </div>
+        </div>
+
+        <div class="col-12">
+            <button type="submit" class="btn btn-primary">Search</button>
+            <a href="/Home/Books" class="btn btn-dark">Reset</a>
+        </div>
+    </form>
 </div>
+
+<div class="mt-4">
+    <div class="btn-group">
+        <label for="currencySelector" class="form-label">Select Currency</label>
+        <select class="form-select" id="currencySelector" onchange="changeCurrency(this.value)">
+            <option value="PLN" selected>PLN</option>
+            <option value="USD">USD</option>
+            <option value="EUR">EUR</option>
+            <option value="GBP">GBP</option>
+            <option value="AUD">AUD</option> <!-- Dolar australijski -->
+            <option value="CAD">CAD</option> <!-- Dolar kanadyjski -->
+            <option value="CHF">CHF</option> <!-- Frank szwajcarski -->
+            <option value="JPY">JPY</option> <!-- Jen japoński -->
+            <option value="SEK">SEK</option> <!-- Korona szwedzka -->
+            <option value="NOK">NOK</option> <!-- Korona norweska -->
+            <option value="HUF">HUF</option> <!-- Forint węgierski -->
+            <option value="CZK">CZK</option> <!-- Korona czeska -->
+        </select>
+    </div>
+</div>
+
 
 
 <div class="w-100 mt-4 d-flex flex-wrap">
     @foreach (var book in Model.Books)
     {
-    <div class="card mx-3 mb-4" style="width: 10rem;">
-        @if(string.IsNullOrEmpty(book.Image))
-        {
+        <div class="card mx-3 mb-4" style="width: 10rem;">
+            @if (string.IsNullOrEmpty(book.Image))
+            {
                 <img style="width:100%;height:180px" src="/images/no_img.png" class="card-img-top" alt="...">
-        }
-        else {
+            }
+            else
+            {
                 <img style="width:100%;height:300px" src="/images/@book.Image" class="card-img-top" alt="...">
-        }
-    
-    <div class="card-body">
-        <h5 class="card-title">@book.Title</h5>
-        <p class="card-text"> 
-           <b>Genre: </b> @book.GenreName</p>
-        <p><b>Author: </b>@book.Author</p>
-        <p><b>Prize: </b>@book.Price</p>
-        
-        @if (book.Quantity > 0) 
-        {
-            <button type="button" onclick="add(@book.Id)" class="btn btn-primary">Add to cart</button>
-        }
-        else
-        {
-            <span style="border: 1px solid; padding: 5px 8px; color: red; border-radius: 5px;">Out of stock</span>
-        }
+            }
 
-    </div>
-    </div>
+            <div class="card-body">
+                <h5 class="card-title">@book.Title</h5>
+                <p class="card-text">
+                    <b>Genre: </b> @book.GenreName
+                </p>
+                <p><b>Author: </b>@book.Author</p>
+                <p><b>Price: </b><span class="book-price" data-original-price="@book.Price">@book.Price</span></p>
+
+
+                @if (book.Quantity > 0)
+                {
+                    <button type="button" onclick="add(@book.Id)" class="btn btn-primary">Add to cart</button>
+                }
+                else
+                {
+                    <span style="border: 1px solid; padding: 5px 8px; color: red; border-radius: 5px;">Out of stock</span>
+                }
+
+            </div>
+        </div>
     }
 </div>
 
 @section Scripts {
     <script>
+        // Zmiana waluty
+        async function changeCurrency(currency) {
+            try {
+                const prices = document.querySelectorAll('.book-price');
+
+                for (const priceEl of prices) {
+                    const originalPrice = parseFloat(priceEl.dataset.originalPrice(',', '.'));
+                    const response = await fetch(`/api/currency/convert?pricePln=${originalPrice}&targetCurrency=${currency}`);
+                    if (response.ok) {
+                        const data = await response.json();
+                    }
+                }
+            } catch (err) {
+                console.error('Currency conversion error:', err);
+            }
+        }
+
+        // Powrót do PLN
+        function resetToPLN() {
+            const prices = document.querySelectorAll('.book-price');
+
+            for (const priceEl of prices) {
+                const original = priceEl.dataset.originalPrice;
+                priceEl.innerText = original;
+            }
+        }
+
+        async function changeCurrency(currency) {
+            try {
+                const prices = document.querySelectorAll('.book-price');
+
+                for (const priceEl of prices) {
+                    // Zamiana przecinka na kropkę dla JS
+                    const rawValue = priceEl.dataset.originalPrice.replace(',', '.');
+                    const originalPrice = parseFloat(rawValue);
+
+                    // Zamiana kropki na przecinek dla API
+                    const formattedPrice = originalPrice.toFixed(2).replace('.', ',');
+
+                    const response = await fetch(`/api/currency/convert?pricePln=${formattedPrice}&targetCurrency=${currency}`);
+                    if (response.ok) {
+                        const data = await response.json();
+
+                        // Wyświetlenie ceny
+                        priceEl.innerText = data.convertedPrice.toFixed(2).replace('.', ',') + ' ' + currency;
+                    }
+                }
+            } catch (err) {
+                console.error('Currency conversion error:', err);
+            }
+        }
+
+
+
+
         async function add(bookId){
             var usernameEl = document.getElementById("username");
            if(usernameEl != null){
@@ -95,4 +174,3 @@
         }
     </script>
 }
-
