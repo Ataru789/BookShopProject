@@ -37,7 +37,7 @@
 <div class="mt-4">
     <div class="btn-group">
         <label for="currencySelector" class="form-label">Select Currency</label>
-        <select class="form-select" id="currencySelector" onchange="changeCurrency(this.value)">
+        <select class="form-select" id="currencySelector" onchange="handleCurrencyChange(this)">
             <option value="PLN" selected>PLN</option>
             <option value="USD">USD</option>
             <option value="EUR">EUR</option>
@@ -146,17 +146,25 @@
             }
         }
 
+        function handleCurrencyChange(select) {
+            const currency = select.value;
+            if (currency === "PLN") {
+                resetToPLN();
+            } else {
+                changeCurrency(currency);
+            }
+        }
 
 
 
         async function add(bookId){
             var usernameEl = document.getElementById("username");
            if(usernameEl != null){
-            // var username = usernameEl.innerText;
+             var username = usernameEl.innerText;
 
-            //     if(username.length<1){
-            //         window.location.href="/Identity/Account/Login";
-            //     }
+                 if(username.length<1){
+                     window.location.href="/Identity/Account/Login";
+                 }
            }
             try{
             var response = await fetch(`/Cart/AddItem?bookId=${bookId}`);
