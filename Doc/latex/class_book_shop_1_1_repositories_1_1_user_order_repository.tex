@@ -1,0 +1,90 @@
+\doxysection{Book\+Shop.\+Repositories.\+User\+Order\+Repository Class Reference}
+\hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository}{}\label{class_book_shop_1_1_repositories_1_1_user_order_repository}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+
+
+Odpowiada za komunikację z bazą danych dla zamówień użytkownika, umożliwia pobieranie i wyświetlanie zamówień  
+
+
+Inheritance diagram for Book\+Shop.\+Repositories.\+User\+Order\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book_shop_1_1_repositories_1_1_user_order_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_a1146334e82f97912a79a03ad9b9f2a99}\label{class_book_shop_1_1_repositories_1_1_user_order_repository_a1146334e82f97912a79a03ad9b9f2a99} 
+{\bfseries User\+Order\+Repository} (Application\+Db\+Context db, IHttp\+Context\+Accessor httpcontext\+Accessor, User\+Manager$<$ Identity\+User $>$ user\+Manager)
+\item 
+async Task \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_user_order_repository_a6c8af1c6d76a739502a867a95e49469b}{Change\+Order\+Status}} (Update\+Order\+Status\+Model data)
+\item 
+async Task$<$ Order?$>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_user_order_repository_a485200c2a5bfb4f161d7f4ebb7992a20}{Get\+Order\+By\+Id}} (int id)
+\item 
+async Task$<$ IEnumerable$<$ Order\+Status $>$ $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_user_order_repository_a20e6c5d096989db71998850996b0eb00}{Get\+Order\+Statuses}} ()
+\item 
+async Task \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_user_order_repository_aa3d207d7eaee1876727d8586f1b45744}{Toggle\+Payment\+Status}} (int order\+Id)
+\item 
+async Task$<$ IEnumerable$<$ Order $>$ $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_user_order_repository_aa38a08ab415cf544b49b83eaa3bba187}{User\+Orders}} (bool get\+All=false)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Odpowiada za komunikację z bazą danych dla zamówień użytkownika, umożliwia pobieranie i wyświetlanie zamówień 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_a6c8af1c6d76a739502a867a95e49469b}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}!ChangeOrderStatus@{ChangeOrderStatus}}
+\index{ChangeOrderStatus@{ChangeOrderStatus}!BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+\doxysubsubsection{\texorpdfstring{ChangeOrderStatus()}{ChangeOrderStatus()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_user_order_repository_a6c8af1c6d76a739502a867a95e49469b} 
+async Task Book\+Shop.\+Repositories.\+User\+Order\+Repository.\+Change\+Order\+Status (\begin{DoxyParamCaption}\item[{Update\+Order\+Status\+Model}]{data}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_user_order_repository}{Book\+Shop.\+Repositories.\+IUser\+Order\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_a485200c2a5bfb4f161d7f4ebb7992a20}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}!GetOrderById@{GetOrderById}}
+\index{GetOrderById@{GetOrderById}!BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+\doxysubsubsection{\texorpdfstring{GetOrderById()}{GetOrderById()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_user_order_repository_a485200c2a5bfb4f161d7f4ebb7992a20} 
+async Task$<$ Order?$>$ Book\+Shop.\+Repositories.\+User\+Order\+Repository.\+Get\+Order\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{id}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_user_order_repository}{Book\+Shop.\+Repositories.\+IUser\+Order\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_a20e6c5d096989db71998850996b0eb00}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}!GetOrderStatuses@{GetOrderStatuses}}
+\index{GetOrderStatuses@{GetOrderStatuses}!BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+\doxysubsubsection{\texorpdfstring{GetOrderStatuses()}{GetOrderStatuses()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_user_order_repository_a20e6c5d096989db71998850996b0eb00} 
+async Task$<$ IEnumerable$<$ Order\+Status $>$ $>$ Book\+Shop.\+Repositories.\+User\+Order\+Repository.\+Get\+Order\+Statuses (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_user_order_repository}{Book\+Shop.\+Repositories.\+IUser\+Order\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_aa3d207d7eaee1876727d8586f1b45744}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}!TogglePaymentStatus@{TogglePaymentStatus}}
+\index{TogglePaymentStatus@{TogglePaymentStatus}!BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+\doxysubsubsection{\texorpdfstring{TogglePaymentStatus()}{TogglePaymentStatus()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_user_order_repository_aa3d207d7eaee1876727d8586f1b45744} 
+async Task Book\+Shop.\+Repositories.\+User\+Order\+Repository.\+Toggle\+Payment\+Status (\begin{DoxyParamCaption}\item[{int}]{order\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_user_order_repository}{Book\+Shop.\+Repositories.\+IUser\+Order\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_user_order_repository_aa38a08ab415cf544b49b83eaa3bba187}\index{BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}!UserOrders@{UserOrders}}
+\index{UserOrders@{UserOrders}!BookShop.Repositories.UserOrderRepository@{BookShop.Repositories.UserOrderRepository}}
+\doxysubsubsection{\texorpdfstring{UserOrders()}{UserOrders()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_user_order_repository_aa38a08ab415cf544b49b83eaa3bba187} 
+async Task$<$ IEnumerable$<$ Order $>$ $>$ Book\+Shop.\+Repositories.\+User\+Order\+Repository.\+User\+Orders (\begin{DoxyParamCaption}\item[{bool}]{get\+All}{ = {\ttfamily false}}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_user_order_repository}{Book\+Shop.\+Repositories.\+IUser\+Order\+Repository}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+User\+Order\+Repository.\+cs\end{DoxyCompactItemize}

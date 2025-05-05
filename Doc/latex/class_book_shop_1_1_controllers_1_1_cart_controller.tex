@@ -1,0 +1,51 @@
+\doxysection{Book\+Shop.\+Controllers.\+Cart\+Controller Class Reference}
+\hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller}{}\label{class_book_shop_1_1_controllers_1_1_cart_controller}\index{BookShop.Controllers.CartController@{BookShop.Controllers.CartController}}
+
+
+Kontroler obsługujący koszyk.  
+
+
+Inheritance diagram for Book\+Shop.\+Controllers.\+Cart\+Controller\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book_shop_1_1_controllers_1_1_cart_controller}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_a53883ba4b51bdec6a94d7e2beaa120be}\label{class_book_shop_1_1_controllers_1_1_cart_controller_a53883ba4b51bdec6a94d7e2beaa120be} 
+{\bfseries Cart\+Controller} (ICart\+Repository cart\+Repo)
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_ae3fdefdb66c922933ad921168a1743d6}\label{class_book_shop_1_1_controllers_1_1_cart_controller_ae3fdefdb66c922933ad921168a1743d6} 
+async Task$<$ IAction\+Result $>$ {\bfseries Add\+Item} (int book\+Id, int qty=1, int redirect=0)
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_a5bab23e5c79ffda351cfc2963d1853d1}\label{class_book_shop_1_1_controllers_1_1_cart_controller_a5bab23e5c79ffda351cfc2963d1853d1} 
+async Task$<$ IAction\+Result $>$ {\bfseries Remove\+Item} (int book\+Id)
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_ac1a61e5fa0b54a38bcd4ecc763ded326}\label{class_book_shop_1_1_controllers_1_1_cart_controller_ac1a61e5fa0b54a38bcd4ecc763ded326} 
+async Task$<$ IAction\+Result $>$ {\bfseries Get\+User\+Cart} ()
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_acfdf1094305abf32abe96fda115db264}\label{class_book_shop_1_1_controllers_1_1_cart_controller_acfdf1094305abf32abe96fda115db264} 
+async Task$<$ IAction\+Result $>$ {\bfseries Get\+Tota\+Item\+In\+Cart} ()
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_a8ede9596ca77926c7e60c2b38ab809e4}\label{class_book_shop_1_1_controllers_1_1_cart_controller_a8ede9596ca77926c7e60c2b38ab809e4} 
+IAction\+Result {\bfseries Checkout} ()
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_a6b747dd6a2d81e63b03c7bc71f75ef53}\label{class_book_shop_1_1_controllers_1_1_cart_controller_a6b747dd6a2d81e63b03c7bc71f75ef53} 
+async Task$<$ IAction\+Result $>$ {\bfseries Checkout} (Checkout\+Model\+DTO model)
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_add9797b5e46acce9910e00cd62716c62}\label{class_book_shop_1_1_controllers_1_1_cart_controller_add9797b5e46acce9910e00cd62716c62} 
+IAction\+Result {\bfseries Order\+Success} ()
+\item 
+\Hypertarget{class_book_shop_1_1_controllers_1_1_cart_controller_a515438ad60a3d7e8c7d4faa595bd594b}\label{class_book_shop_1_1_controllers_1_1_cart_controller_a515438ad60a3d7e8c7d4faa595bd594b} 
+IAction\+Result {\bfseries Order\+Failure} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Kontroler obsługujący koszyk. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cart\+Controller.\+cs\end{DoxyCompactItemize}

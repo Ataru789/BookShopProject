@@ -1,0 +1,66 @@
+\doxysection{Book\+Shop.\+Repositories.\+Stock\+Repository Class Reference}
+\hypertarget{class_book_shop_1_1_repositories_1_1_stock_repository}{}\label{class_book_shop_1_1_repositories_1_1_stock_repository}\index{BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}}
+
+
+Jest to interfejs, który definiuje metody do zarządzania ilością dostępnych książek.  
+
+
+Inheritance diagram for Book\+Shop.\+Repositories.\+Stock\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book_shop_1_1_repositories_1_1_stock_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_book_shop_1_1_repositories_1_1_stock_repository_aa55b09e378d3ed0f8cda7897024c3659}\label{class_book_shop_1_1_repositories_1_1_stock_repository_aa55b09e378d3ed0f8cda7897024c3659} 
+{\bfseries Stock\+Repository} (Application\+Db\+Context context)
+\item 
+async Task$<$ Stock?$>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_stock_repository_ae744056b6c1cfaf70f32c7cefc3802a3}{Get\+Stock\+Book\+By\+Id}} (int book\+Id)
+\item 
+async Task \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_stock_repository_a23cfd747db826d7072cdd3181161c899}{Manage\+Stock}} (Stock\+DTO stock\+To\+Manage)
+\item 
+async Task$<$ IEnumerable$<$ Stock\+Display\+Model $>$ $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_stock_repository_abe03d8fba346a585d2c95194a42544db}{Get\+Stocks}} (string s\+Term="{}"{})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Jest to interfejs, który definiuje metody do zarządzania ilością dostępnych książek. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_book_shop_1_1_repositories_1_1_stock_repository_ae744056b6c1cfaf70f32c7cefc3802a3}\index{BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}!GetStockBookById@{GetStockBookById}}
+\index{GetStockBookById@{GetStockBookById}!BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}}
+\doxysubsubsection{\texorpdfstring{GetStockBookById()}{GetStockBookById()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_stock_repository_ae744056b6c1cfaf70f32c7cefc3802a3} 
+async Task$<$ Stock?$>$ Book\+Shop.\+Repositories.\+Stock\+Repository.\+Get\+Stock\+Book\+By\+Id (\begin{DoxyParamCaption}\item[{int}]{book\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_stock_repository}{Book\+Shop.\+Repositories.\+IStock\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_stock_repository_abe03d8fba346a585d2c95194a42544db}\index{BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}!GetStocks@{GetStocks}}
+\index{GetStocks@{GetStocks}!BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}}
+\doxysubsubsection{\texorpdfstring{GetStocks()}{GetStocks()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_stock_repository_abe03d8fba346a585d2c95194a42544db} 
+async Task$<$ IEnumerable$<$ Stock\+Display\+Model $>$ $>$ Book\+Shop.\+Repositories.\+Stock\+Repository.\+Get\+Stocks (\begin{DoxyParamCaption}\item[{string}]{s\+Term}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_stock_repository}{Book\+Shop.\+Repositories.\+IStock\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_stock_repository_a23cfd747db826d7072cdd3181161c899}\index{BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}!ManageStock@{ManageStock}}
+\index{ManageStock@{ManageStock}!BookShop.Repositories.StockRepository@{BookShop.Repositories.StockRepository}}
+\doxysubsubsection{\texorpdfstring{ManageStock()}{ManageStock()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_stock_repository_a23cfd747db826d7072cdd3181161c899} 
+async Task Book\+Shop.\+Repositories.\+Stock\+Repository.\+Manage\+Stock (\begin{DoxyParamCaption}\item[{Stock\+DTO}]{stock\+To\+Manage}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_stock_repository}{Book\+Shop.\+Repositories.\+IStock\+Repository}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Stock\+Repository.\+cs\end{DoxyCompactItemize}

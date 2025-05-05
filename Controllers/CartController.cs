@@ -40,12 +40,12 @@ namespace BookShop.Controllers
             int cartItem = await _cartRepo.GetCartItemCount();
             return Ok(cartItem);
         }
-        public IActionResult Checkout() 
+        public IActionResult Checkout()
         {
             return View();    
         }
         [HttpPost]
-        public async Task<IActionResult> Checkout(CheckoutModelDTO model)
+        public async Task<IActionResult> Checkout(CheckoutModelDTO model) 
         {
             if(!ModelState.IsValid)
                 return View(model);

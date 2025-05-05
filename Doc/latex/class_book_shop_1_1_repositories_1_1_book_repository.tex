@@ -1,0 +1,54 @@
+\doxysection{Book\+Shop.\+Repositories.\+Book\+Repository Class Reference}
+\hypertarget{class_book_shop_1_1_repositories_1_1_book_repository}{}\label{class_book_shop_1_1_repositories_1_1_book_repository}\index{BookShop.Repositories.BookRepository@{BookShop.Repositories.BookRepository}}
+
+
+Odpowiada za komunikację z bazą danych dla książek, umożliwia pobieranie i wyświetlanie książek.  
+
+
+Inheritance diagram for Book\+Shop.\+Repositories.\+Book\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book_shop_1_1_repositories_1_1_book_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_book_shop_1_1_repositories_1_1_book_repository_a18c468ea1590f07d21f9b9c157ab6dea}\label{class_book_shop_1_1_repositories_1_1_book_repository_a18c468ea1590f07d21f9b9c157ab6dea} 
+{\bfseries Book\+Repository} (Application\+Db\+Context db)
+\item 
+async Task$<$ IEnumerable$<$ Genre $>$ $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_book_repository_a43ddf08c067bb8d3eaec8aa9c84f4bad}{Genres}} ()
+\item 
+async Task$<$ IEnumerable$<$ Book $>$ $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_book_repository_a9ffabec547332698be7a9ee0ec7b0d4b}{Get\+Books}} (string s\+Term="{}"{}, int genre\+Id=0)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Odpowiada za komunikację z bazą danych dla książek, umożliwia pobieranie i wyświetlanie książek. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_book_shop_1_1_repositories_1_1_book_repository_a43ddf08c067bb8d3eaec8aa9c84f4bad}\index{BookShop.Repositories.BookRepository@{BookShop.Repositories.BookRepository}!Genres@{Genres}}
+\index{Genres@{Genres}!BookShop.Repositories.BookRepository@{BookShop.Repositories.BookRepository}}
+\doxysubsubsection{\texorpdfstring{Genres()}{Genres()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_book_repository_a43ddf08c067bb8d3eaec8aa9c84f4bad} 
+async Task$<$ IEnumerable$<$ Genre $>$ $>$ Book\+Shop.\+Repositories.\+Book\+Repository.\+Genres (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_i_book_repository}{Book\+Shop.\+IBook\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_book_repository_a9ffabec547332698be7a9ee0ec7b0d4b}\index{BookShop.Repositories.BookRepository@{BookShop.Repositories.BookRepository}!GetBooks@{GetBooks}}
+\index{GetBooks@{GetBooks}!BookShop.Repositories.BookRepository@{BookShop.Repositories.BookRepository}}
+\doxysubsubsection{\texorpdfstring{GetBooks()}{GetBooks()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_book_repository_a9ffabec547332698be7a9ee0ec7b0d4b} 
+async Task$<$ IEnumerable$<$ Book $>$ $>$ Book\+Shop.\+Repositories.\+Book\+Repository.\+Get\+Books (\begin{DoxyParamCaption}\item[{string}]{s\+Term}{ = {\ttfamily "{}"{}}, }\item[{int}]{genre\+Id}{ = {\ttfamily 0}}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_i_book_repository}{Book\+Shop.\+IBook\+Repository}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Book\+Repository.\+cs\end{DoxyCompactItemize}

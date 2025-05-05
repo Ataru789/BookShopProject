@@ -3,6 +3,9 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Controllers
 {
+    /// <summary>
+    /// Kontroler API do konwersji cen na inne waluty
+    /// </summary>
     [ApiController]
     [Route("api/[controller]")]
     public class CurrencyController : ControllerBase

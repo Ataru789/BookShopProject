@@ -1,0 +1,42 @@
+\doxysection{Book\+Shop.\+Repositories.\+ICart\+Repository Interface Reference}
+\hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository}\index{BookShop.Repositories.ICartRepository@{BookShop.Repositories.ICartRepository}}
+
+
+Jest to interfejs, który definiuje metody do zarządzania koszykiem.  
+
+
+Inheritance diagram for Book\+Shop.\+Repositories.\+ICart\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{interface_book_shop_1_1_repositories_1_1_i_cart_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a552f519ad2b4c6e17e6add16fbc79a54}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a552f519ad2b4c6e17e6add16fbc79a54} 
+Task$<$ int $>$ {\bfseries Add\+Item} (int book\+Id, int qty)
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a95330c56aee8a9a2166b3f144d0ec3e9}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a95330c56aee8a9a2166b3f144d0ec3e9} 
+Task$<$ int $>$ {\bfseries Remove\+Item} (int book\+Id)
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a70033d3d3fd51a0a3417f1ac14a6f29b}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a70033d3d3fd51a0a3417f1ac14a6f29b} 
+Task$<$ Shopping\+Cart $>$ {\bfseries Get\+User\+Cart} ()
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_ae96b67e41ce95753ca5a1220591b692c}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_ae96b67e41ce95753ca5a1220591b692c} 
+Task$<$ int $>$ {\bfseries Get\+Cart\+Item\+Count} (string user\+Id="{}"{})
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a0924e27657a720a8f3d405b4c49cecdb}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a0924e27657a720a8f3d405b4c49cecdb} 
+Task$<$ Shopping\+Cart $>$ {\bfseries Get\+Cart} (string user\+Id)
+\item 
+\Hypertarget{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a7101b845071302cd2b127e72d63d9e2e}\label{interface_book_shop_1_1_repositories_1_1_i_cart_repository_a7101b845071302cd2b127e72d63d9e2e} 
+Task$<$ bool $>$ {\bfseries Do\+Checkout} (Checkout\+Model\+DTO model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Jest to interfejs, który definiuje metody do zarządzania koszykiem. 
+
+The documentation for this interface was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+ICart\+Repository.\+cs\end{DoxyCompactItemize}

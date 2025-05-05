@@ -6,6 +6,9 @@ using System.Collections.Generic;
 
 namespace BookShop.Services
 {
+    /// <summary>
+    ///  Usługa do pobierania kursów walut z api NBP
+    /// </summary>
     public class ExchangeRateService
     {
         private readonly HttpClient _httpClient;
