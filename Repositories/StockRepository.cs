@@ -1,7 +1,12 @@
 ﻿using Microsoft.EntityFrameworkCore;
 
+
+
 namespace BookShop.Repositories
 {
+    /// <summary>
+    /// Jest to interfejs, który definiuje metody do zarządzania ilością dostępnych książek
+    /// </summary>
     public class StockRepository : IStockRepository
     {
         private readonly ApplicationDbContext _context;

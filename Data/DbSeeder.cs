@@ -4,6 +4,9 @@ using BookShop.Constants;
 
 namespace BookShop.Data
 {
+    /// <summary>
+    /// Klasa odpowiedzialna za wstawienie początkowych danych do bazy danych, takich jak np. role użytkowników
+    /// </summary>
     public class DbSeeder
     {
         public static async Task SeedDefaultData(IServiceProvider service)

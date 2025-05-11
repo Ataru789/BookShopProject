@@ -2,8 +2,12 @@
 using Microsoft.AspNetCore.Mvc;
 
 namespace BookShop.Controllers
+
 {
     [Authorize(Roles=nameof(Roles.Admin))]
+    /// <summary>
+    /// Kontroler odpowiedzialny za zarządzanie stanem książek
+    /// </summary>  
     public class StockController : Controller
     {
         private readonly IStockRepository _stockRepo;

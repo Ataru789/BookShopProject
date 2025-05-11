@@ -1,7 +1,11 @@
 using BookShop;
 using BookShop.Data;
+using BookShop.Services;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+/// <summary>
+/// Konfiguracja aplikacji ASP.NET Core. £¹czy siê z baz¹ danych SQL Server
+/// </summary>
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -20,12 +24,16 @@ builder.Services.AddTransient<IBookRepository, BookRepository>();
 builder.Services.AddTransient<ICartRepository, CartRepository>();
 builder.Services.AddTransient<IUserOrderRepository, UserOrderRepository>();
 builder.Services.AddTransient<IStockRepository, StockRepository>();
+builder.Services.AddTransient<IGenreRepository, GenreRepository>();
+
+builder.Services.AddHttpClient<ExchangeRateService>();
+
 
 var app = builder.Build();
-/*using (var scope = app.Services.CreateScope()) 
-{
-    await DbSeeder.SeedDefaultData(scope.ServiceProvider);    
-}*/
+//using (var scope = app.Services.CreateScope()) 
+//{
+//    await DbSeeder.SeedDefaultData(scope.ServiceProvider);    
+//}
 
 
     // Configure the HTTP request pipeline.

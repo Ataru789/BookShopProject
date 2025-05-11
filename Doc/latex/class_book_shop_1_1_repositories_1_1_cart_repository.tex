@@ -1,0 +1,102 @@
+\doxysection{Book\+Shop.\+Repositories.\+Cart\+Repository Class Reference}
+\hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository}{}\label{class_book_shop_1_1_repositories_1_1_cart_repository}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+
+
+Odpowiada za komunikację z bazą danych dla koszyka, umożliwia dodawanie i usuwanie książek z koszyka.  
+
+
+Inheritance diagram for Book\+Shop.\+Repositories.\+Cart\+Repository\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_book_shop_1_1_repositories_1_1_cart_repository}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_adeed06551a5629a7bb301e3ecd18f8f9}\label{class_book_shop_1_1_repositories_1_1_cart_repository_adeed06551a5629a7bb301e3ecd18f8f9} 
+{\bfseries Cart\+Repository} (Application\+Db\+Context db, IHttp\+Context\+Accessor httpcontext\+Accessor, User\+Manager$<$ Identity\+User $>$ user\+Manager)
+\item 
+async Task$<$ int $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_a6ce194a2243a749a439cf613af0fe1e7}{Add\+Item}} (int book\+Id, int qty)
+\item 
+async Task$<$ int $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_ad1006e1b53a31fda6e0a7810c99db535}{Remove\+Item}} (int book\+Id)
+\item 
+async Task$<$ Shopping\+Cart $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_ae7fc0ca38fb63dbc9a65b2185ae909e6}{Get\+User\+Cart}} ()
+\item 
+async Task$<$ Shopping\+Cart $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_ae9c94e6b71c5e327cec289b92e81402e}{Get\+Cart}} (string user\+Id)
+\item 
+async Task$<$ int $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_aaedc7313a10e321e792160c976a53cfd}{Get\+Cart\+Item\+Count}} (string user\+Id="{}"{})
+\item 
+async Task$<$ bool $>$ \mbox{\hyperlink{class_book_shop_1_1_repositories_1_1_cart_repository_aa303be7776e74fae91b738bba43beaf5}{Do\+Checkout}} (Checkout\+Model\+DTO model)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Odpowiada za komunikację z bazą danych dla koszyka, umożliwia dodawanie i usuwanie książek z koszyka. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_a6ce194a2243a749a439cf613af0fe1e7}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!AddItem@{AddItem}}
+\index{AddItem@{AddItem}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{AddItem()}{AddItem()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_a6ce194a2243a749a439cf613af0fe1e7} 
+async Task$<$ int $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Add\+Item (\begin{DoxyParamCaption}\item[{int}]{book\+Id}{, }\item[{int}]{qty}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_aa303be7776e74fae91b738bba43beaf5}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!DoCheckout@{DoCheckout}}
+\index{DoCheckout@{DoCheckout}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{DoCheckout()}{DoCheckout()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_aa303be7776e74fae91b738bba43beaf5} 
+async Task$<$ bool $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Do\+Checkout (\begin{DoxyParamCaption}\item[{Checkout\+Model\+DTO}]{model}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_ae9c94e6b71c5e327cec289b92e81402e}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!GetCart@{GetCart}}
+\index{GetCart@{GetCart}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{GetCart()}{GetCart()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_ae9c94e6b71c5e327cec289b92e81402e} 
+async Task$<$ Shopping\+Cart $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Get\+Cart (\begin{DoxyParamCaption}\item[{string}]{user\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_aaedc7313a10e321e792160c976a53cfd}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!GetCartItemCount@{GetCartItemCount}}
+\index{GetCartItemCount@{GetCartItemCount}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{GetCartItemCount()}{GetCartItemCount()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_aaedc7313a10e321e792160c976a53cfd} 
+async Task$<$ int $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Get\+Cart\+Item\+Count (\begin{DoxyParamCaption}\item[{string}]{user\+Id}{ = {\ttfamily "{}"{}}}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_ae7fc0ca38fb63dbc9a65b2185ae909e6}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!GetUserCart@{GetUserCart}}
+\index{GetUserCart@{GetUserCart}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{GetUserCart()}{GetUserCart()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_ae7fc0ca38fb63dbc9a65b2185ae909e6} 
+async Task$<$ Shopping\+Cart $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Get\+User\+Cart (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+\Hypertarget{class_book_shop_1_1_repositories_1_1_cart_repository_ad1006e1b53a31fda6e0a7810c99db535}\index{BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}!RemoveItem@{RemoveItem}}
+\index{RemoveItem@{RemoveItem}!BookShop.Repositories.CartRepository@{BookShop.Repositories.CartRepository}}
+\doxysubsubsection{\texorpdfstring{RemoveItem()}{RemoveItem()}}
+{\footnotesize\ttfamily \label{class_book_shop_1_1_repositories_1_1_cart_repository_ad1006e1b53a31fda6e0a7810c99db535} 
+async Task$<$ int $>$ Book\+Shop.\+Repositories.\+Cart\+Repository.\+Remove\+Item (\begin{DoxyParamCaption}\item[{int}]{book\+Id}{}\end{DoxyParamCaption})}
+
+
+
+Implements \mbox{\hyperlink{interface_book_shop_1_1_repositories_1_1_i_cart_repository}{Book\+Shop.\+Repositories.\+ICart\+Repository}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Cart\+Repository.\+cs\end{DoxyCompactItemize}

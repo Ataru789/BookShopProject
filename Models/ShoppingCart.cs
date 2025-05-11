@@ -4,6 +4,9 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace BookShop.Models
 {
     [Table("ShoppingCart")]
+    /// <summary>
+    /// Model przechowujący informacje o koszyku
+    /// </summary>
     public class ShoppingCart
     {
         public int Id { get; set; }

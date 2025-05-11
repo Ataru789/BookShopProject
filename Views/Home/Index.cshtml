@@ -1,12 +1,78 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Bookstore - Home Page";
 }
 
-<div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewData["Title"]</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            overflow: hidden;
+        }
+
+        .background-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+
+            .background-container img {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                opacity: 0;
+                transition: opacity 1s ease-in-out;
+            }
+
+                .background-container img.active {
+                    opacity: 1;
+                }
+
+        .carousel-container {
+            position: relative;
+            z-index: 10;
+        }
+
+        .carousel-item img {
+            max-height: 500px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <div class="background-container">
+        <img src="https://sp3slupca.pl/wp-content/uploads/2018/12/ksiazki2.jpg" alt="Background 1" class="active">
+        <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8Ym9va3xlbnwwfHwwfHx8MA%3D%3D" alt="Background 2">
+        <img src="https://s.lubimyczytac.pl/upload/texts/15100/15167/15167_1611933558_grafika800x600.jpg" alt="Background 3">
     </div>
-</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // JavaScript to cycle through background images
+        const backgroundImages = document.querySelectorAll('.background-container img');
+        let currentImageIndex = 0;
+
+        setInterval(() => {
+            // Remove 'active' class from current image
+            backgroundImages[currentImageIndex].classList.remove('active');
+
+            // Move to the next image (or loop back to the first)
+            currentImageIndex = (currentImageIndex + 1) % backgroundImages.length;
+
+            // Add 'active' class to the new current image
+            backgroundImages[currentImageIndex].classList.add('active');
+        }, 4000); // Change every 4 seconds
+    </script>
+</body>
+</html>

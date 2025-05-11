@@ -1,51 +1,65 @@
-﻿@model CheckoutModel
+﻿@model CheckoutModelDTO
 @{
     ViewData["Title"] = "Checkout";
 }
 
-<h2>Checkout</h2>
-<form asp-action="Checkout">
-    <div class="py-2">
-        <label asp-for="Name">Name*</label>
-        <input type="text" class="form-control" asp-for="Name" />
-        <span asp-validation-for="Name" class="text-danger"></span>
+<h2 class="mb-4">Checkout</h2>
+<form asp-action="Checkout" novalidate>
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="Name" class="form-label">Name*</label>
+            <input type="text" class="form-control" asp-for="Name" placeholder="Enter your full name" required />
+            <span asp-validation-for="Name" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Email" class="form-label">Email*</label>
+            <input type="email" class="form-control" asp-for="Email" placeholder="Enter your email address" required />
+            <span asp-validation-for="Email" class="text-danger"></span>
+        </div>
     </div>
 
-    <div class="py-2">
-        <label asp-for="Email">Email*</label>
-        <input type="text" class="form-control" asp-for="Email" />
-        <span asp-validation-for="Email" class="text-danger"></span>
-
+    <div class="row">
+        <div class="col-md-6 mb-3">
+            <label asp-for="MobileNumber" class="form-label">Mobile Number*</label>
+            <input type="tel" class="form-control" asp-for="MobileNumber" placeholder="Enter your mobile number" required pattern="[0-9]{10}" />
+            <span asp-validation-for="MobileNumber" class="text-danger"></span>
+        </div>
+        <div class="col-md-6 mb-3">
+            <label asp-for="Address" class="form-label">Address*</label>
+            <textarea class="form-control" asp-for="Address" rows="3" placeholder="Enter your address" required></textarea>
+            <span asp-validation-for="Address" class="text-danger"></span>
+        </div>
     </div>
 
-    <div class="py-2">
-        <label asp-for="MobileNumber">MobileNumber*</label>
-        <input type="text" class="form-control" asp-for="MobileNumber" />
-        <span asp-validation-for="MobileNumber" class="text-danger"></span>
-    </div>
-
-
-    <div class="py-2">
-        <label asp-for="Address">Address*</label>
-        <textarea class="form-control" asp-for="Address" rows="5"> </textarea>
-        <span asp-validation-for="Address" class="text-danger"></span>
-    </div>
-
-    <div class="py-2">
-        <span class="mr-2">COD*</span>
-        <select asp-for="PaymentMethod" class="form-control">
+    <div class="mb-3">
+        <label asp-for="PaymentMethod" class="form-label">Payment Method*</label>
+        <select asp-for="PaymentMethod" class="form-select" id="paymentMethod" required>
             <option value="">Select Payment Method</option>
-            @foreach (var method in Enum.GetValues(typeof(BookShop.Constants.PaymentMethods)))
+            @foreach (var method in Enum.GetValues(typeof(BookShop.Constants.PayMethods)))
             {
                 <option value="@method.ToString()">@method.ToString()</option>
-
             }
         </select>
         <span asp-validation-for="PaymentMethod" class="text-danger"></span>
     </div>
 
-    <div class="py-2">
-        <button type="submit" c class="btn btn-info">Next</button>
+    <div id="additionalInfo" class="mb-3 d-none">
+        <label for="cardDetails" class="form-label">Card Details</label>
+        <input type="text" id="cardDetails" class="form-control" placeholder="Enter card details" />
+    </div>
 
+    <div class="mb-3">
+        <button type="submit" class="btn btn-primary w-100">Proceed to Payment</button>
     </div>
 </form>
+
+<script>
+    document.getElementById('paymentMethod').addEventListener('change', function () {
+        const additionalInfo = document.getElementById('additionalInfo');
+        if (this.value === 'CreditCard') {
+            additionalInfo.classList.remove('d-none');
+        } else {
+            additionalInfo.classList.add('d-none');
+        }
+    });
+</script>

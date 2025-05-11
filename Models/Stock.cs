@@ -2,6 +2,9 @@
 namespace BookShop.Models;
 
 [Table("Stock")]
+/// <summary>
+/// Model przechowujący informacje o ilości dostępnych książek
+/// </summary>
 public class Stock
 {
     public int Id { get; set; }

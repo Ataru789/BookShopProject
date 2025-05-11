@@ -4,6 +4,9 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BookShop.Data
 {
+    /// <summary>
+    /// Klasa reprezentująca kontekst bazy danych
+    /// </summary>
     public class ApplicationDbContext : IdentityDbContext
     {
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
